@@ -1,0 +1,7 @@
+{
+  "identifier": "com.glcoder.scienceunlock",
+  "displayName": "ScienceUnlock",
+  "assemblies": [
+    "ScienceUnlock.dll"
+  ]
+}

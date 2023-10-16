@@ -1,0 +1,6 @@
+.vs/
+.idea/
+[Bb]in/
+[Oo]bj/
+[Pp]ublish/
+Dependencies/**/*.dll

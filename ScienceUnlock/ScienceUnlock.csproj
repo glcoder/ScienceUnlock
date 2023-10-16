@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>../Dependencies/Foundry/0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Main">
+      <HintPath>../Dependencies/Foundry/Main.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../Dependencies/Foundry/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
+    <Copy SourceFiles="../Dependencies/modInfo.json" DestinationFolder="$(PublishDir)" />
+  </Target>
+
+</Project>
