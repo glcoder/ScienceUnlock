@@ -1,16 +1,24 @@
-﻿using System.Reflection;
+﻿using HarmonyLib;
 
 namespace ScienceUnlock
 {
-    internal static class Main
+    [HarmonyPatch(typeof(ItemTemplate), nameof(ItemTemplate.onLoad))]
+    internal static class ItemTemplate_OnLoad
     {
-        [OnGameAssemblyLoad]
-        public static void OnGameAssemblyLoad(Assembly assembly)
+        static void Postfix(ItemTemplate __instance, bool isCalledFromEditor)
         {
-            if (!BuildInfo.isDemo)
-                return;
+            __instance.includeInBuild = true;
+            __instance.includeInDemo = true;
+        }
+    }
 
-            BuildInfo.isDemo = false;
+    [HarmonyPatch(typeof(ResearchTemplate), nameof(ResearchTemplate.onLoad))]
+    internal static class ResearchTemplate_OnLoad
+    {
+        static void Postfix(ResearchTemplate __instance)
+        {
+            __instance.includeInBuild = true;
+            __instance.includeInDemo = true;
         }
     }
 }
