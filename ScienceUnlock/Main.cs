@@ -7,7 +7,7 @@ namespace ScienceUnlock
     {
         static void Postfix(ItemTemplate __instance, bool isCalledFromEditor)
         {
-            __instance.includeInBuild = true;
+            // not longer in ItemTemplate: __instance.includeInBuild = true;
             __instance.includeInDemo = true;
         }
     }
@@ -17,7 +17,7 @@ namespace ScienceUnlock
     {
         static void Postfix(ResearchTemplate __instance)
         {
-            __instance.includeInBuild = true;
+            // not longer in ItemTemplate: __instance.includeInBuild = true;
             __instance.includeInDemo = true;
         }
     }
